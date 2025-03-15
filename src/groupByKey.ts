@@ -9,7 +9,7 @@ export function groupByKey<T, K extends keyof T>(
   const groopedObj: GroupsMap<T> = {};
 
   items.forEach((item: T): void => {
-    const sortedValue = item[key] as string;
+    const sortedValue = String(item[key]);
 
     if (!groopedObj[sortedValue]) {
       groopedObj[sortedValue] = [];
